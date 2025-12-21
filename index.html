@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Syafiq Rahman Alif - Portfolio</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 50%, #7e8ba3 100%);
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            text-align: center;
+            padding: 60px 20px;
+            color: white;
+            animation: fadeIn 1s ease-in;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .profile-img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            border: 5px solid white;
+            margin-bottom: 20px;
+            background: linear-gradient(135deg, #1e3c72, #2a5298);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 60px;
+            color: white;
+            margin-left: auto;
+            margin-right: auto;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+        }
+
+        h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .subtitle {
+            font-size: 1.2em;
+            opacity: 0.95;
+            margin-bottom: 10px;
+        }
+
+        .location {
+            font-size: 0.95em;
+            opacity: 0.85;
+        }
+
+        .social-links {
+            margin-top: 20px;
+        }
+
+        .social-links a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 1.1em;
+            transition: all 0.3s;
+            display: inline-block;
+            padding: 8px 16px;
+            border-radius: 5px;
+            background: rgba(255,255,255,0.1);
+        }
+
+        .social-links a:hover {
+            transform: translateY(-3px);
+            background: rgba(255,255,255,0.2);
+        }
+
+        .content {
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            margin-top: -30px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.25);
+        }
+
+        .section {
+            margin-bottom: 40px;
+        }
+
+        .section h2 {
+            color: #1e3c72;
+            margin-bottom: 20px;
+            font-size: 2em;
+            border-bottom: 3px solid #2a5298;
+            padding-bottom: 10px;
+        }
+
+        .about-text {
+            background: linear-gradient(135deg, #f0f4f8 0%, #d9e7f5 100%);
+            padding: 20px;
+            border-radius: 10px;
+            border-left: 4px solid #2a5298;
+            margin-bottom: 20px;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .stat-card {
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            padding: 20px;
+            border-radius: 10px;
+            color: white;
+            text-align: center;
+            transition: transform 0.3s;
+            box-shadow: 0 4px 10px rgba(30,60,114,0.3);
+        }
+
+        .stat-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .stat-card h3 {
+            font-size: 2em;
+            margin-bottom: 5px;
+        }
+
+        .stat-card p {
+            opacity: 0.9;
+            font-size: 0.9em;
+        }
+
+        .experience-item {
+            background: #f8f9fa;
+            padding: 25px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            border-left: 4px solid #2a5298;
+            transition: all 0.3s;
+        }
+
+        .experience-item:hover {
+            box-shadow: 0 5px 15px rgba(30,60,114,0.2);
+            transform: translateX(5px);
+        }
+
+        .experience-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: start;
+            margin-bottom: 10px;
+            flex-wrap: wrap;
+        }
+
+        .experience-title {
+            color: #1e3c72;
+            font-size: 1.3em;
+            font-weight: bold;
+        }
+
+        .experience-company {
+            color: #2a5298;
+            font-size: 1.1em;
+            margin-bottom: 5px;
+        }
+
+        .experience-date {
+            color: #666;
+            font-size: 0.9em;
+        }
+
+        .experience-item ul {
+            margin-left: 20px;
+            margin-top: 10px;
+        }
+
+        .experience-item li {
+            margin-bottom: 8px;
+            color: #555;
+        }
+
+        .skills-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .skill-category {
+            background: linear-gradient(135deg, #f0f4f8 0%, #d9e7f5 100%);
+            padding: 20px;
+            border-radius: 10px;
+            border-top: 3px solid #2a5298;
+        }
+
+        .skill-category h3 {
+            color: #1e3c72;
+            margin-bottom: 15px;
+            font-size: 1.2em;
+        }
+
+        .skills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .skill-tag {
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            color: white;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 0.9em;
+            transition: transform 0.3s;
+            box-shadow: 0 2px 5px rgba(30,60,114,0.3);
+        }
+
+        .skill-tag:hover {
+            transform: scale(1.05);
+        }
+
+        .projects {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .project-card {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            border-radius: 10px;
+            padding: 25px;
+            transition: all 0.3s;
+            border: 2px solid transparent;
+        }
+
+        .project-card:hover {
+            border-color: #2a5298;
+            box-shadow: 0 8px 20px rgba(30,60,114,0.2);
+            transform: translateY(-5px);
+        }
+
+        .project-card h3 {
+            color: #1e3c72;
+            margin-bottom: 10px;
+            font-size: 1.3em;
+        }
+
+        .project-year {
+            display: inline-block;
+            background: #2a5298;
+            color: white;
+            padding: 4px 12px;
+            border-radius: 15px;
+            font-size: 0.85em;
+            margin-bottom: 10px;
+        }
+
+        .project-card p {
+            color: #555;
+            margin-bottom: 15px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 30px;
+            color: white;
+            margin-top: 40px;
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2em;
+            }
+            
+            .content {
+                padding: 20px;
+            }
+
+            .experience-header {
+                flex-direction: column;
+            }
+
+            .stats-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="profile-img">SR</div>
+            <h1>Syafiq Rahman Alif</h1>
+            <p class="subtitle">D4 Teknik Elektro Otomasi - Institut Teknologi Sepuluh Nopember</p>
+            <p class="location">📍 Buduran, Sidoarjo, Jawa Timur</p>
+            <div class="social-links">
+                <a href="https://github.com/syafiqra" target="_blank">🔗 GitHub</a>
+                <a href="mailto:syafiqr766@gmail.com">📧 Email</a>
+                <a href="https://www.linkedin.com/in/syafiqrahmanalif" target="_blank">💼 LinkedIn</a>
+                <a href="tel:081913966933">📱 WhatsApp</a>
+            </div>
+        </header>
+
+        <div class="content">
+            <section class="section">
+                <h2>Tentang Saya</h2>
+                <div class="about-text">
+                    <p>Mahasiswa D4 Teknik Elektro Otomasi ITS yang terbiasa mengerjakan proyek berbasis praktik dan tim. Aktif belajar, adaptif, dan siap berkontribusi dalam lingkungan kerja teknis maupun organisasi. Memiliki pengalaman magang di PT. Angkasa Pura dan aktif dalam berbagai kepanitiaan kampus.</p>
+                </div>
+                
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <h3>3.45</h3>
+                        <p>IPK / 4.00</p>
+                    </div>
+                    <div class="stat-card">
+                        <h3>3+</h3>
+                        <p>Proyek Otomasi</p>
+                    </div>
+                    <div class="stat-card">
+                        <h3>4+</h3>
+                        <p>Pengalaman Organisasi</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section">
+                <h2>Pengalaman Kerja</h2>
+                <div class="experience-item">
+                    <div class="experience-header">
+                        <div>
+                            <div class="experience-title">Teknisi - Airport Technology Network Operating System</div>
+                            <div class="experience-company">PT. Angkasa Pura</div>
+                        </div>
+                        <div class="experience-date">Jan 2023 - Apr 2023</div>
+                    </div>
+                    <ul>
+                        <li>Troubleshooting perangkat elektronik dan jaringan ketika terjadi gangguan operasional untuk memastikan sistem tetap berjalan optimal</li>
+                        <li>Membantu pengelolaan dan manajemen data sistem operasional bandara</li>
+                        <li>Berpartisipasi dalam monitoring sistem teknologi dan jaringan bandara</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section class="section">
+                <h2>Pengalaman Organisasi</h2>
+                <div class="experience-item">
+                    <div class="experience-header">
+                        <div>
+                            <div class="experience-title">Staff Security And License</div>
+                            <div class="experience-company">Vondasi 7.0 - ITS</div>
+                        </div>
+                        <div class="experience-date">Oct 2025 - Nov 2025</div>
+                    </div>
+                    <ul>
+                        <li>Mengurus perizinan kegiatan</li>
+                        <li>Membantu menjaga keamanan dan ketertiban selama acara berlangsung</li>
+                    </ul>
+                </div>
+
+                <div class="experience-item">
+                    <div class="experience-header">
+                        <div>
+                            <div class="experience-title">Staff Web Development</div>
+                            <div class="experience-company">Voits Festival - ITS</div>
+                        </div>
+                        <div class="experience-date">Jun 2025 - Sep 2025</div>
+                    </div>
+                    <ul>
+                        <li>Mengembangkan dan mengelola sistem backend website pembelian tiket</li>
+                        <li>Pengolahan data pengguna, transaksi pembelian, dan integrasi database untuk memastikan proses tiket berjalan aman dan lancar</li>
+                    </ul>
+                </div>
+
+                <div class="experience-item">
+                    <div class="experience-header">
+                        <div>
+                            <div class="experience-title">Staff Perlengkapan dan Konsumsi</div>
+                            <div class="experience-company">OKKBK DTEO ITS</div>
+                        </div>
+                        <div class="experience-date">Jul 2025 - Aug 2025</div>
+                    </div>
+                    <ul>
+                        <li>Bertanggung jawab atas penyediaan perlengkapan</li>
+                        <li>Pengelolaan konsumsi acara agar kegiatan berjalan lancar dan tepat waktu</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section class="section">
+                <h2>Keahlian</h2>
+                <div class="skills-container">
+                    <div class="skill-category">
+                        <h3>💻 Hard Skills</h3>
+                        <div class="skills">
+                            <span class="skill-tag">Jaringan Komputer</span>
+                            <span class="skill-tag">Manajemen Jaringan</span>
+                            <span class="skill-tag">Perbaikan Komputer</span>
+                            <span class="skill-tag">Troubleshooting Hardware</span>
+                            <span class="skill-tag">Arduino IDE</span>
+                            <span class="skill-tag">Mikrokontroler</span>
+                            <span class="skill-tag">Instalasi Listrik</span>
+                            <span class="skill-tag">Pengukuran Listrik</span>
+                            <span class="skill-tag">Simulasi Komputer</span>
+                        </div>
+                    </div>
+                    <div class="skill-category">
+                        <h3>🤝 Soft Skills</h3>
+                        <div class="skills">
+                            <span class="skill-tag">Komunikasi</span>
+                            <span class="skill-tag">Kerja Tim</span>
+                            <span class="skill-tag">Pemecahan Masalah</span>
+                            <span class="skill-tag">Manajemen Waktu</span>
+                            <span class="skill-tag">Adaptif</span>
+                            <span class="skill-tag">Tanggung Jawab</span>
+                            <span class="skill-tag">Kepemimpinan</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section">
+                <h2>Proyek</h2>
+                <div class="projects">
+                    <div class="project-card">
+                        <span class="project-year">2024</span>
+                        <h3>Dasar Otomasi 1</h3>
+                        <p>Mengembangkan dan merakit rangkaian otomasi dasar meliputi power supply, pembagi tegangan dan arus, counter & adder berbasis seven segment, serta kontrol motor DC sebagai implementasi konsep elektronika dan otomasi industri.</p>
+                    </div>
+                    <div class="project-card">
+                        <span class="project-year">2025</span>
+                        <h3>Dasar Otomasi 2</h3>
+                        <p>Merancang dan mengimplementasikan sistem otomasi berbasis studi kasus meliputi power supply ±12V, virtual instrument, driver motor DC berbasis PWM, analisis karakteristik transistor, dan rangkaian zero-span menggunakan op-amp.</p>
+                    </div>
+                    <div class="project-card">
+                        <span class="project-year">2025</span>
+                        <h3>Dasar Otomasi 3</h3>
+                        <p>Merancang dan mengimplementasikan sistem kontrol berbasis mikrokontroler (ATMega/ESP32) dengan metode kontrol terprogram, integrasi sensor, modul input/output, serta pengendalian plant motor DC dan motor AC menggunakan inverter/VFD beserta sistem sensing pendukung.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section">
+                <h2>Kontak</h2>
+                <p>Tertarik untuk berkolaborasi atau ingin mengetahui lebih lanjut tentang proyek-proyek saya? Jangan ragu untuk menghubungi saya!</p>
+                <div class="skills" style="margin-top: 20px;">
+                    <a href="mailto:syafiqr766@gmail.com" class="skill-tag" style="text-decoration: none;">📧 syafiqr766@gmail.com</a>
+                    <a href="tel:081913966933" class="skill-tag" style="text-decoration: none;">📱 081913966933</a>
+                    <a href="https://www.linkedin.com/in/syafiqrahmanalif" class="skill-tag" style="text-decoration: none;" target="_blank">💼 LinkedIn</a>
+                    <a href="https://github.com/syafiqra" class="skill-tag" style="text-decoration: none;" target="_blank">🔗 GitHub</a>
+                </div>
+            </section>
+        </div>
+
+        <footer>
+            <p>&copy; 2024 Syafiq Rahman Alif. All rights reserved.</p>
+            <p style="margin-top: 10px; opacity: 0.8;">Made with ❤️ for professional purposes</p>
+        </footer>
+    </div>
+</body>
+</html>
